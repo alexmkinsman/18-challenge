@@ -11,7 +11,7 @@ const userSchema = new Schema( {
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.|\..+/, "Must match an amail address!"]
+    match: [/.+@.+\..+/, "Must match an amail address!"]
   },
   thoughts: [
     {
@@ -19,7 +19,7 @@ const userSchema = new Schema( {
       ref: "Thought"
     }
   ],
-  friends : [
+  friends: [
     {
       type: Schema.Types.ObjectId,
       ref: "User"
